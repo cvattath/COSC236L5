@@ -9,4 +9,27 @@ public class Book {
 	
 	// TODO: implement Book functionality 
 	
+	public Book(String title) {
+		this.title = title;
+		this.isAvailable = true;
+	}
+	
+	public String getTitle() {
+		return this.title;
+	}
+	
+	public boolean isAvailable() {
+		return isAvailable;
+	}
+	
+	public boolean borrow() {
+		if(isAvailable) {
+			isAvailable = false;
+			return true;
+		}
+		return false;
+	}
+	
+	
+	
 }
