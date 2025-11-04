@@ -13,19 +13,45 @@ public class LibrarianController {
         this.library = library;
     }
 
-    public boolean addBook(Book book){
-        return this.library.addBook(book);
+    public boolean addBook(String title){
+        return this.library.addBook(title);
     }
 
-    public boolean borrowBook(Member member, Book book) {
-        return member.borrow(book);
+    public boolean borrowBook(String title, String name) {
+        Member member = this.library.findMemberByName(name);
+        Book book = this.library.findBookByTitle(title);
+
+        if(book == null || member == null) return false;
+        if(validateMemberBook(member, book)) {
+            return member.borrow(book);
+        }
+        return false;
     }
 
-    public boolean returnBook(Member member, Book book) {
-        return member.returnBook(book);
+    public boolean returnBook(String title, String name) {
+        Member member = this.library.findMemberByName(name);
+        Book book = this.library.findBookByTitle(title);
+
+        if(book == null || member == null) return false;
+        if(validateMemberBook(member, book)) {
+            return member.returnBook(book);
+        }
+        return false;
     }
 
-    public Member addMember(String name, int memberID) {
-        return this.library.addMember(name, memberID);
+    public boolean addMember(String name) {
+        return this.library.addMember(name);
+    }
+
+    private boolean validateMemberBook(Member member, Book book) {
+        return library.isMemberValid(member) && library.isBookValid(book);
+    }
+
+    public void printAvailableBooks() {
+        library.printAvailableBooks();
+    }
+
+    public void printMembers() {
+        library.printMembers();
     }
 }

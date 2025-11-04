@@ -37,4 +37,18 @@ public class Book {
         }
         return false;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Book) {
+            Book book = (Book)obj;
+            return this.title.equals(book.getTitle());
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return this.title;
+    }
 }
