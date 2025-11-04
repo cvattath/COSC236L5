@@ -9,12 +9,12 @@ public class Library {
 	//	Manage the catalog of books and members.
 	//	Track which books are borrowed and available
 	
-	private List<Book> memberBook;
-	private List<Member> memberList;
+	private List<Book> books;
+	private List<Member> members;
 
-	public Library(List<Book> memberBook, List<Member> memberList){
-		this.memberBook = memberBook;
-		this.memberList = memberList;
+	public Library(){
+		this.books = new ArrayList<>();
+		this.members = new ArrayList<>();
 	}
 	
 	// Attributes:
@@ -23,18 +23,31 @@ public class Library {
 
 	private void printCatalog(){
 		System.out.println("List of Books: ");
-		for(Book book : memberBook){
+		for(Book book : books){
 			System.out.println(book);
 		}
 	}
 
 	private void printMembers(){
 		System.out.println("List of Members: ");
-		for(Member member : memberList){
+		for(Member member : members){
 			System.out.println(member);
 		}
 	}
 
+    public boolean addBook(Book book){
+        if(!books.contains(book)){
+            books.add(book);
+            return true;
+        }
+        return false;
+    }
+
 	// TODO: implement functionality of Member class
 
+    public Member addMember(String name, int memberID){
+        Member newMember = new Member(name, memberID);
+        members.add(newMember);
+        return newMember;
+    }
 }
