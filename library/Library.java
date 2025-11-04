@@ -1,16 +1,18 @@
 package lab4.library;
 
-imprt java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Library {
 	
 	//  GRASP Principles: Creator, Controller
 	//	Manage the catalog of books and members.
 	//	Track which books are borrowed and available
+	
 	private List<Book> memberBook;
 	private List<Member> memberList;
 
-	public Library(memberBook, memberList){
+	public Library(List<Book> memberBook, List<Member> memberList){
 		this.memberBook = memberBook;
 		this.memberList = memberList;
 	}
@@ -19,17 +21,17 @@ public class Library {
 	// private catalog (list of Book) 
 	// private members (list of Members)
 
-	private void catalog(){
+	private void printCatalog(){
 		System.out.println("List of Books: ");
-		for(String book : memberBook){
+		for(Book book : memberBook){
 			System.out.println(book);
 		}
 	}
 
-	private void members(){
+	private void printMembers(){
 		System.our.println("List of Members: ");
-		for(String individualMember : memberList){
-			System.out.println(individualMember);
+		for(Member member : memberList){
+			System.out.println(member);
 		}
 	}
 
