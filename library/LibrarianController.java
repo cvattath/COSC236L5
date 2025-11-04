@@ -13,8 +13,8 @@ public class LibrarianController {
         this.library = library;
     }
 
-    public boolean addBook(String title){
-        return this.library.addBook(title);
+    public boolean addBook(String title,String author){
+        return this.library.addBook(title,author);
     }
 
     public boolean borrowBook(String title, String name) {
