@@ -30,6 +30,11 @@ public class Book {
 		return false;
 	}
 	
-	
-	
+    public boolean returnBook() {
+        if(!isAvailable) {
+            isAvailable = true;
+            return true;
+        }
+        return false;
+    }
 }

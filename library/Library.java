@@ -29,7 +29,7 @@ public class Library {
 	}
 
 	private void printMembers(){
-		System.our.println("List of Members: ");
+		System.out.println("List of Members: ");
 		for(Member member : memberList){
 			System.out.println(member);
 		}

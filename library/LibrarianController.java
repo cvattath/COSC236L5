@@ -8,4 +8,11 @@ public class LibrarianController {
 	
 	// TODO: implement functionality of Member class
 
+    public boolean borrowBook(Member member, Book book) {
+        return member.borrow(book);
+    }
+
+    public boolean returnBook(Member member, Book book) {
+        return member.returnBook(book);
+    }
 }

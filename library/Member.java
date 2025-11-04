@@ -1,5 +1,6 @@
 package lab4.library;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Member {
 
@@ -20,13 +21,20 @@ public class Member {
 		borrowedBooks = new ArrayList<>();
 	}
 	
-	public boolean borrowBook(Book book) {
-		if(book.isAvailable()) {
-			book.setAvailable(false);
-		}
+	public boolean borrow(Book book) {
+		if(book.borrow()) {
 			borrowedBooks.add(book);
-			return true;
+            return true;
 		}
+		return false;
 	}
 
+    public boolean returnBook(Book book) {
+        if(borrowedBooks.contains(book)) {
+            borrowedBooks.remove(book);
+            book.returnBook();
+            return true;
+        }
+        return false;
+    }
 }
