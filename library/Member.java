@@ -1,5 +1,5 @@
 package lab4.library;
-import.java.util.ArrayList;
+import java.util.ArrayList;
 
 public class Member {
 
@@ -10,11 +10,11 @@ public class Member {
 	private int memberId;
 	
 	private List<Book> borrowedBooks;
-	TODO: implement collection of borrowed books
+	// TODO: implement collection of borrowed books
 	
 	// TODO: implement functionality of Member class
 	
-	public Member(String name, int memeberId) {
+	public Member(String name, int memberId) {
 		this.name = name;
 		this.memberId = memberId;
 		borrowedBooks = new ArrayList<>();
