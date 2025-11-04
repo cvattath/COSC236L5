@@ -19,7 +19,10 @@ public class Book {
 	public String getTitle() {
 		return this.title;
 	}
-	
+
+	public String getAuthor(){
+		return this.author;
+	}	
 	public boolean isAvailable() {
 		return isAvailable;
 	}
@@ -35,7 +38,7 @@ public class Book {
     public boolean returnBook() {
         if(!isAvailable) {
             isAvailable = true;
-            return true;
+        	return true;
         }
         return false;
     }
@@ -51,6 +54,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return this.title;
+        return this.title + this.author + " Available? " + this.isAvailable;
     }
 }
