@@ -14,13 +14,13 @@ public class LibraryApp {
 
         // Adding some books to the catalog
         System.out.println("\n *** Adding \"Dune\" to the library:");
-        controller.addBook("Dune");
+        controller.addBook("Dune", "jeff");
 
         System.out.println("\n *** Adding \"1984\" to the library:");
-        controller.addBook("1984");
+        controller.addBook("1984", "john");
 
         System.out.println("\n *** Adding \"Moby Dick\" to the library:");
-        controller.addBook("Moby Dick");
+        controller.addBook("Moby Dick", "katie");
 
         // Show available books
         System.out.println("\n *** Show all books:");

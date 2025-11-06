@@ -5,14 +5,14 @@ public class Book {
 	// GRASP Principle: Information Expert
 	// Manages its own state (available or borrowed).
 	private String title;
-	private string author;
+	private String author;
 	private boolean isAvailable; 
 	
 	// TODO: implement Book functionality 
 	
 	public Book(String title, String author) {
 		this.title = title;
-		this.author = author;
+        this.author = author;
 		this.isAvailable = true;
 	}
 	
@@ -54,6 +54,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return this.title + this.author + " Available? " + this.isAvailable;
+        return this.title + " by: " + this.author;
     }
 }

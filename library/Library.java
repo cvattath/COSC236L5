@@ -55,8 +55,8 @@ public class Library {
         return null;
     }
 
-    public boolean addBook(String title) {
-        Book book = new Book(title);
+    public boolean addBook(String title, String author) {
+        Book book = new Book(title, author);
 
         if (!books.contains(book)) {
             books.add(book);
